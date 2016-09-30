@@ -1,5 +1,4 @@
 <?php
-
 /**
  * --------------
  * HELPERS
@@ -21,16 +20,16 @@
  * read.
  * -------------------
  */
-function print_pre($stuffToPrint){
-  echo '<pre style="
-    background:#ededed;
-    color:#444;
-    border:1px solid #ccc;
-    border-radius:10px;
-    font-size:10px;
-    padding:10px;
-    margin:10px;
-  ">';
-  var_dump($stuffToPrint);
-  echo '</pre>';
+function print_pre( $stuff_to_print ){
+	echo '<pre style="
+		background:#ededed;
+		color:#444;
+		border:1px solid #ccc;
+		border-radius:10px;
+		font-size:10px;
+		padding:10px;
+		margin:10px;
+	">';
+	var_dump( $stuff_to_print );
+	echo '</pre>';
 }
