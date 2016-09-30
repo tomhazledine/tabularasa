@@ -20,6 +20,6 @@ function print_pre( $stuff_to_print ) {
 		padding:10px;
 		margin:10px;
 	">';
-	print( $stuff_to_print );
+	print( esc_attr( $stuff_to_print ) );
 	echo '</pre>';
 }
