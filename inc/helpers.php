@@ -8,7 +8,7 @@
 /**
  * Print Pre: outputs a pre-styled block to make debug prints more easy to read.
  *
- * @param  string $stuff_to_print Text to be wrapped in styled pre-tag.
+ * @param string $stuff_to_print Text to be wrapped in styled pre-tag.
  */
 function print_pre( $stuff_to_print ) {
 	echo '<pre style="
@@ -23,3 +23,4 @@ function print_pre( $stuff_to_print ) {
 	print( esc_attr( $stuff_to_print ) );
 	echo '</pre>';
 }
+
