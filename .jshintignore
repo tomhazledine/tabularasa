@@ -1,5 +1,4 @@
-*/**.min.js
-assets/js/**.*.js
-uncompressed/js/jquery/**.js
-uncompressed/js/static/**.js
-uncompressed/js/vendor/**.js
+assets/js/*.min.js
+assets/js/static/*/**.js
+gulpfile.js
+uncompressed/*/**.js
