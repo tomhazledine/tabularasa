@@ -9,7 +9,7 @@
  * Enqueue scripts and styles.
  */
 function tabularasa_scripts() {
-	wp_enqueue_style( 'tabularasa-style', get_stylesheet_uri() . '/assets/css/main.css' );
+	wp_enqueue_style( 'tabularasa-style', get_template_directory_uri() . '/assets/css/main.css' );
 
 	wp_enqueue_script( 'tabularasa-scripts', get_template_directory_uri() . '/assets/js/app.js', array( 'jquery' ), '20151215', true );
 
