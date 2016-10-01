@@ -12,3 +12,8 @@ https://github.com/squizlabs/PHP_CodeSniffer/wiki/Configuration-Options
 `phpcs -i`
 
 `phpcs --config-set installed_paths /Users/tom/Documents/wpcs/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/wpcs`
+
+---
+
+`npm install -g jscs`
+
