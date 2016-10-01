@@ -1,7 +1,5 @@
-assets/js/*.min.js
-assets/js/static/*/**.js
 gulpfile.js
-uncompressed/custom/**.js
-uncompressed/jquery/**.js
-uncompressed/static/**.js
-uncompressed/vendor/**.js
+uncompressed/custom/*.js
+uncompressed/jquery/*.js
+uncompressed/static/*.js
+uncompressed/vendor/*.js
