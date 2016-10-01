@@ -49,3 +49,15 @@ function move_excerpt_meta_box( $post ) {
 	}
 }
 add_action( 'edit_form_after_title', 'move_excerpt_meta_box' );
+
+/**
+ * Reset Default Excerpt Length
+ *
+ * @param  integer $length Original excerpt length.
+ * @return integer         New excerpt length.
+ */
+function custom_excerpt_length( $length ) {
+	return 20;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+

@@ -147,4 +147,4 @@ require get_template_directory() . '/inc/helpers.php';
 /**
  * Load custom filters.
  */
-require get_template_directory() . '/inc/filters.php';
+require get_template_directory() . '/inc/filters-actions.php';
