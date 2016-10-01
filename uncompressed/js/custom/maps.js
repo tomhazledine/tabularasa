@@ -2,6 +2,7 @@
  * Google Maps Initialisation
  */
 
+var containerId = 'mapCanvas';
 var mapZoom;
 var mapLat;
 var mapLng;
@@ -75,16 +76,20 @@ if ( mapLat && mapLng ) {
 		};
 
 		// Make the map
-		map = new google.maps.Map( document.getElementById( 'mapCanvas' ), mapOptions );
+		map = new google.maps.Map( document.getElementById( containerId ), mapOptions );
 
 		// Set the marker marker
 		if ( customMarkerIcon ) {
+
+			// If we have a custom marker icon, use it.
 			marker = new google.maps.Marker({
 				position: currentTarget,
 				map: map,
 				icon: customMarkerIcon
 			});
 		} else {
+
+			// Otherwise, build with standard marker icon.
 			marker = new google.maps.Marker({
 				position: currentTarget,
 				map: map
