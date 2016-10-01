@@ -1,6 +1,6 @@
 <?php
 /**
- * Custom Filters
+ * Custom Filters & Actions
  *
  * @package Tabula_Rasa
  */
