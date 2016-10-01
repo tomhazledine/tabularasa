@@ -1,27 +1,50 @@
-// 08. Maps
-var mapBox = $( '#mapCanvas' );
-var mapZoom = parseInt( $( '.mapZoom' ).text() );
-var mapLat = parseFloat( $( '.propMapLat' ).text() );
-var mapLng = parseFloat( $( '.propMapLng' ).text() );
-var mapOffsetXRaw = parseFloat( $( '.propMapLatOffset' ).text() );
-var mapOffsetYRaw = parseFloat( $( '.propMapLngOffset' ).text() );
+/**
+ * Google Maps Initialisation
+ */
+
+var mapZoom;
+var mapLat;
+var mapLng;
 var mapOffsetX;
 var mapOffsetY;
 var customMarkerIcon = false;// '../images/customIcon.png';
 
-if ( ! isNaN( mapOffsetXRaw ) ) {
-	mapOffsetX = mapOffsetXRaw;
+// Parse mapLat
+if ( 'undefined' != typeof window.mapLat ) {
+	mapLat = parseFloat( window.mapLat );
+} else {
+	mapLat = false;
+}
+
+// Parse mapLng
+if ( 'undefined' != typeof window.mapLng ) {
+	mapLng = parseFloat( window.mapLng );
+} else {
+	mapLng = false;
+}
+
+// Parse mapZoom
+if ( 'undefined' != typeof window.mapZoom ) {
+	mapZoom = parseFloat( window.mapZoom );
+} else {
+	mapZoom = 12;
+}
+
+// Parse mapOffsetX
+if ( 'undefined' != typeof window.mapOffsetX ) {
+	mapOffsetX = parseFloat( window.mapOffsetX );
 } else {
 	mapOffsetX = 0;
 }
 
-if ( ! isNaN( mapOffsetYRaw ) ) {
-	mapOffsetY = mapOffsetYRaw;
+// Parse mapOffsetY
+if ( 'undefined' != typeof window.mapOffsetY ) {
+	mapOffsetY = parseFloat( window.mapOffsetY );
 } else {
 	mapOffsetY = 0;
 }
 
-if ( mapBox.length ) {
+if ( mapLat && mapLng ) {
 
 	function initialize() {
 
@@ -30,8 +53,8 @@ if ( mapBox.length ) {
 		var marker;
 
 		// Call in the target latitude and longitude
-		var testingLat = window.mapLat;
-		var testingLng = window.mapLng;
+		var testingLat = mapLat;
+		var testingLng = mapLng;
 
 		// Call in the desired offset, and setup the offset latitude and longitude
 		var testingOffsetLat = testingLat + mapOffsetX;
@@ -46,7 +69,7 @@ if ( mapBox.length ) {
 		// Setup map options
 		var mapOptions = {
 			center:currentCentre,
-			zoom: window.mapZoom,
+			zoom: mapZoom,
 			scrollwheel: false,
 			mapTypeId:google.maps.MapTypeId.MAP
 		};
