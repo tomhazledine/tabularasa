@@ -45,58 +45,59 @@ if ( 'undefined' != typeof window.mapOffsetY ) {
 	mapOffsetY = 0;
 }
 
-if ( mapLat && mapLng ) {
+function initialize() {
 
-	function initialize() {
+	// Setup the Google Maps variable
+	var map;
+	var marker;
 
-		// Setup the Google Maps variable
-		var map;
-		var marker;
+	// Call in the target latitude and longitude
+	var testingLat = mapLat;
+	var testingLng = mapLng;
 
-		// Call in the target latitude and longitude
-		var testingLat = mapLat;
-		var testingLng = mapLng;
+	// Call in the desired offset, and setup the offset latitude and longitude
+	var testingOffsetLat = testingLat + mapOffsetX;
+	var testingOffsetLng = testingLng + mapOffsetY;
 
-		// Call in the desired offset, and setup the offset latitude and longitude
-		var testingOffsetLat = testingLat + mapOffsetX;
-		var testingOffsetLng = testingLng + mapOffsetY;
+	// Declare map centre position
+	var currentTarget = new google.maps.LatLng( testingLat, testingLng );
 
-		// Declare map centre position
-		var currentTarget = new google.maps.LatLng( testingLat, testingLng );
+	// Declare marker position
+	var currentCentre = new google.maps.LatLng( testingOffsetLat, testingOffsetLng );
 
-		// Declare marker position
-		var currentCentre = new google.maps.LatLng( testingOffsetLat, testingOffsetLng );
+	// Setup map options
+	var mapOptions = {
+		center:currentCentre,
+		zoom: mapZoom,
+		scrollwheel: false,
+		mapTypeId:google.maps.MapTypeId.MAP
+	};
 
-		// Setup map options
-		var mapOptions = {
-			center:currentCentre,
-			zoom: mapZoom,
-			scrollwheel: false,
-			mapTypeId:google.maps.MapTypeId.MAP
-		};
+	// Make the map
+	map = new google.maps.Map( document.getElementById( containerId ), mapOptions );
 
-		// Make the map
-		map = new google.maps.Map( document.getElementById( containerId ), mapOptions );
+	// Set the marker marker
+	if ( customMarkerIcon ) {
 
-		// Set the marker marker
-		if ( customMarkerIcon ) {
+		// If we have a custom marker icon, use it.
+		marker = new google.maps.Marker({
+			position: currentTarget,
+			map: map,
+			icon: customMarkerIcon
+		});
+	} else {
 
-			// If we have a custom marker icon, use it.
-			marker = new google.maps.Marker({
-				position: currentTarget,
-				map: map,
-				icon: customMarkerIcon
-			});
-		} else {
-
-			// Otherwise, build with standard marker icon.
-			marker = new google.maps.Marker({
-				position: currentTarget,
-				map: map
-			});
-		}
-
+		// Otherwise, build with standard marker icon.
+		marker = new google.maps.Marker({
+			position: currentTarget,
+			map: map
+		});
 	}
+
+}
+
+// Only trigger the `initialize` function if we have lat & lng values.
+if ( mapLat && mapLng ) {
 
 	// The standard Google Maps load trigger
 	google.maps.event.addDomListener( window, 'load', initialize );
