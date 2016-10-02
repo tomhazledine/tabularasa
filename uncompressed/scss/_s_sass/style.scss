@@ -1,20 +1,24 @@
-/**
- * TABULA RASA CSS
- * 
- * This theme, like WordPress, is licensed under the GPL.
- * Use it to make something cool, have fun, and share what you've learned with others.
- * 
- * Tabula Rasa is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
- * Underscores is distributed under the terms of the GNU GPL v2 or later.
- *
- * Normalizing styles have been helped along thanks to the fine work of
- * Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
- */
+/*!
+Theme Name: Tabula Rasa
+Theme URI: http://underscores.me/
+Author: Tom Hazledine
+Author URI: http://tomhazledine.com
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: tabularasa
+Tags:
 
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
 
-/**
- * PART ONE: Underscores' styles
- */
+Tabula Rasa is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
 
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
@@ -24,112 +28,79 @@
 # Elements
 # Forms
 # Navigation
-    ## Links
-    ## Menus
+	## Links
+	## Menus
 # Accessibility
 # Alignments
 # Clearings
 # Widgets
 # Content
-    ## Posts and pages
-    ## Comments
+	## Posts and pages
+	## Comments
 # Infinite scroll
 # Media
-    ## Captions
-    ## Galleries
+	## Captions
+	## Galleries
 --------------------------------------------------------------*/
-@import "_s_sass/variables-site/variables-site";
-@import "_s_sass/mixins/mixins-master";
+@import "variables-site/variables-site";
+@import "mixins/mixins-master";
 
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
-@import "_s_sass/normalize";
+@import "normalize";
 
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-@import "_s_sass/typography/typography";
+@import "typography/typography";
 
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
-@import "_s_sass/elements/elements";
+@import "elements/elements";
 
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
-@import "_s_sass/forms/forms";
+@import "forms/forms";
 
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
-@import "_s_sass/navigation/navigation";
+@import "navigation/navigation";
 
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
-@import "_s_sass/modules/accessibility";
+@import "modules/accessibility";
 
 /*--------------------------------------------------------------
 # Alignments
 --------------------------------------------------------------*/
-@import "_s_sass/modules/alignments";
+@import "modules/alignments";
 
 /*--------------------------------------------------------------
 # Clearings
 --------------------------------------------------------------*/
-@import "_s_sass/modules/clearings";
+@import "modules/clearings";
 
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
-@import "_s_sass/site/secondary/widgets";
+@import "site/secondary/widgets";
 
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
-@import "_s_sass/site/site";
+@import "site/site";
 
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
-@import "_s_sass/modules/infinite-scroll";
+@import "modules/infinite-scroll";
 
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
-@import "_s_sass/media/media";
-
-
-//------------------------------------//
-
-// // 01. SETTINGS
-// @import "settings.colours";
-// @import "settings.fonts";
-// @import "settings.breakpoints";
-
-// // 02. TOOLS
-// @import "tools.placeholders";
-// @import "tools.mixins";
-
-// // 03. GENERIC
-// //@import 'generic.normalize';
-// @import "generic.reset";
-
-// // 04. BASE
-// @import "base.general";
-// @import "base.theme";
-// @import "base.forms";
-// @import "base.selects";
-// @import "base.checkbox";
-// @import "base.datepicker";
-
-// // 05. OBJECTS
-// @import "objects.pagination";
-
-// // 06. COMPONENTS
-
-// // 07. TRUMPS
-// @import "trumps.utilities";
-// @import "trumps.printpre";
+@import "media/media";
