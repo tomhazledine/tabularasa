@@ -24,3 +24,20 @@ function print_pre( $stuff_to_print ) {
 	echo '</pre>';
 }
 
+// Disable Admin Bar
+if ( current_user_can('delete_plugins') ) {
+    // Disable the Admin Bar By Default
+    add_filter( 'show_admin_bar', '__return_false' );
+    // Remove the Admin Bar preference in user profile to remove temptation...
+    remove_action( 'personal_options', '_admin_bar_preferences' );
+}
+
+// Excerpt on pages
+add_post_type_support( 'page', 'excerpt' );
+
+
+// Google API key
+function my_acf_init() {
+    acf_update_setting('google_api_key', 'AIzaSyAUh4otABlZG8K52orgNDOibXX-1-c5YYY');
+}
+add_action('acf/init', 'my_acf_init');
